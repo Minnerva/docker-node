@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  node:
+    build: ./node # default as Dockerfile
+    volumes:
+      - ./node:/usr/node/ # mounted the whole node folder, will keep updating the file when changing on local
+      - /usr/node/node_modules # prevent local node_modules to get mounted
+    ports:
+      - 80:8080
